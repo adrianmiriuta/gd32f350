@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F350</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\GD32F3x0_DFP\1.0.0\Device\Include;..\..\GD32F3x0_DFP\1.0.0\Device\Firmware\Peripherals\inc;..\..\gd32mcu\inc;..\..\gd32mcu\inc\arch;..\..\gd32mcu\inc\cpu;..\..\gd32mcu\inc\ipc;D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;..\..\User</IncludePath>
+              <IncludePath>..\..\GD32F3x0_DFP\1.0.0\Device\Include;..\..\GD32F3x0_DFP\1.0.0\Device\Firmware\Peripherals\inc;..\..\gd32mcu\inc;..\..\gd32mcu\inc\arch;..\..\gd32mcu\inc\cpu;..\..\gd32mcu\inc\ipc;D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;..\..\User;..\..\protocol</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -550,6 +550,61 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>protocol/b_tp</GroupName>
+          <Files>
+            <File>
+              <FileName>b_tp_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\b_tp_port\b_tp_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>b_tp_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\b_tp_port\b_tp_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>b_tp_port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\b_tp_port\b_tp_port.h</FilePath>
+            </File>
+            <File>
+              <FileName>crc16.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\check\crc16\crc16.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc16.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\check\crc16\crc16.h</FilePath>
+            </File>
+            <File>
+              <FileName>b_tp.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\inc\b_tp.h</FilePath>
+            </File>
+            <File>
+              <FileName>b_tp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\protocol\b_tp_stream\b_tp\src\b_tp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>protocol/protocol</GroupName>
+          <Files>
+            <File>
+              <FileName>protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\protocol\protocol\protocol.c</FilePath>
+            </File>
+            <File>
+              <FileName>protocol.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\protocol\protocol\protocol.h</FilePath>
             </File>
           </Files>
         </Group>

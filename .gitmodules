@@ -1,0 +1,3 @@
+[submodule "protocol/b_tp_stream"]
+	path = protocol/b_tp_stream
+	url = git@github.com:notrynohigh/b_tp_stream.git
