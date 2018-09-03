@@ -317,7 +317,7 @@
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
             <EnumInt>0</EnumInt>
-            <PlainCh>0</PlainCh>
+            <PlainCh>1</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <wLevel>2</wLevel>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F350</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\GD32F3x0_DFP\1.0.0\Device\Include;..\..\GD32F3x0_DFP\1.0.0\Device\Firmware\Peripherals\inc;..\..\board\Colibri-F350RB;..\..\board\Colibri-F350RB\GD32F3x0_Firmware_Library_Adapter;..\..\gd32mcu\inc;..\..\gd32mcu\inc\arch;..\..\gd32mcu\inc\cpu;..\..\gd32mcu\inc\ipc;..\..\example;D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include</IncludePath>
+              <IncludePath>..\..\GD32F3x0_DFP\1.0.0\Device\Include;..\..\GD32F3x0_DFP\1.0.0\Device\Firmware\Peripherals\inc;..\..\gd32mcu\inc;..\..\gd32mcu\inc\arch;..\..\gd32mcu\inc\cpu;..\..\gd32mcu\inc\ipc;D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include;..\..\User</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -514,47 +514,42 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Colibri-F350VE_BSP</GroupName>
+          <GroupName>user/uart</GroupName>
           <Files>
             <File>
-              <FileName>colibri_bsp.c</FileName>
+              <FileName>uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\board\Colibri-F350RB\colibri_bsp.c</FilePath>
+              <FilePath>..\..\User\uart\uart.c</FilePath>
             </File>
             <File>
-              <FileName>colibri_bsp_key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\board\Colibri-F350RB\colibri_bsp_key.c</FilePath>
-            </File>
-            <File>
-              <FileName>colibri_bsp_led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\board\Colibri-F350RB\colibri_bsp_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>colibri_bsp_uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\board\Colibri-F350RB\colibri_bsp_uart.c</FilePath>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\uart\uart.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>example_board</GroupName>
+          <GroupName>user/platform</GroupName>
           <Files>
             <File>
-              <FileName>board_key_example.c</FileName>
+              <FileName>platform.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\example\book_chapter_13_board\board_key_example.c</FilePath>
+              <FilePath>..\..\User\platform\platform.c</FilePath>
             </File>
             <File>
-              <FileName>board_led_example.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\example\book_chapter_13_board\board_led_example.c</FilePath>
+              <FileName>platform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\platform\platform.h</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user/main</GroupName>
+          <Files>
             <File>
-              <FileName>board_uart_example.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\example\book_chapter_13_board\board_uart_example.c</FilePath>
+              <FilePath>..\..\User\main.c</FilePath>
             </File>
           </Files>
         </Group>
