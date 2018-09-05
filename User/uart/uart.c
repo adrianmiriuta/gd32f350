@@ -1,4 +1,6 @@
 #include "uart.h"
+#include "./b_tp_stream/b_tp/inc/b_tp.h"
+
 
 #ifndef NULL
 #define NULL     ((void *)0)
@@ -82,6 +84,7 @@ void USART0_IRQHandler()
 {
     uint8_t tmp = 0;
     tmp = usart_data_receive(USART0);
+    b_tp_receive_data(&tmp, 1);
 }
 
 
@@ -89,6 +92,6 @@ void USART1_IRQHandler()
 {
     uint8_t tmp = 0;
     tmp = usart_data_receive(USART1);
-    uart1_write_ch(tmp);
+    b_tp_receive_data(&tmp, 1);
 }
 

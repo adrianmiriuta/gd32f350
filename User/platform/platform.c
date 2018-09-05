@@ -70,26 +70,6 @@ void platform_gpio_init()
 }
 
 
-void test_pin()
-{
-    gpio_bit_set(GPIOA, GPIO_PIN_4);
-    gpio_bit_set(GPIOA, GPIO_PIN_5);
-    gpio_bit_set(GPIOA, GPIO_PIN_7);  
-    delay_xms(100);    
-    delay_xms(100); 
-    delay_xms(100); 
-    delay_xms(100); 
-    delay_xms(100); 
-    gpio_bit_reset(GPIOA, GPIO_PIN_4);
-    gpio_bit_reset(GPIOA, GPIO_PIN_5);
-    gpio_bit_reset(GPIOA, GPIO_PIN_7);
-    delay_xms(100);    
-    delay_xms(100); 
-    delay_xms(100); 
-    delay_xms(100); 
-    delay_xms(100);    
-}
-
 
 
 

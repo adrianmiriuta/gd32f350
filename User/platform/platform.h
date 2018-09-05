@@ -21,7 +21,7 @@
 
 void platform_clock_enable(void);
 void platform_gpio_init(void);
-void test_pin(void);
+
 
 
 #endif
