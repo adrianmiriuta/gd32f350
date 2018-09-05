@@ -68,7 +68,7 @@ typedef void (*pcmd_handler_t)(protocol_info_t);
 
 #endif
 
-
+void protocol_init(void);
 int protocol_send(protocol_struct_t protocol_struct, uint8_t *param, uint32_t param_len);
 int protocol_regist_command(uint8_t cmd, pcmd_handler_t phandler);
 int protocol_unregist_command(uint8_t cmd);

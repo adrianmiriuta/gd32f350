@@ -9,6 +9,15 @@ void platform_clock_enable()
     rcu_periph_clock_enable(RCU_USART0);
     rcu_periph_clock_enable(RCU_USART1);
     rcu_periph_clock_enable(RCU_SPI0);
+    
+    rcu_periph_clock_enable(RCU_PMU);
+    pmu_backup_write_enable();
+    
+    rcu_osci_on(RCU_IRC40K);
+    rcu_osci_stab_wait(RCU_IRC40K);
+    rcu_rtc_clock_config(RCU_RTCSRC_IRC40K);
+    rcu_periph_clock_enable(RCU_RTC);
+    rtc_register_sync_wait();
 }
 
 

@@ -3,13 +3,15 @@
 #include "./delay/delay.h"
 #include "./spiflash/spi.h"
 #include "./spiflash/flash_dev.h"
-
-
-
+#include "./calendar/calendar.h"
+#include "stdio.h"
+#include "string.h"
 
 int main()
 {
-    uint8_t tmp_table[16];
+    calendar_info_t calendar_info;
+    uint8_t second = 0;
+    uint8_t tmp[128];
     nvic_priority_group_set(NVIC_PRIGROUP_PRE0_SUB4);
     /** platform init   */
     platform_clock_enable();
@@ -17,16 +19,27 @@ int main()
     delay_init();
     /** peripherals init   */
     uart_init();
-    uart1_write((uint8_t *)"hello world\n\r", 13);
-    
     spi0_init();
-    flash_erase_xsector(0x0, 1);
-    flash_write_buf((uint8_t *)"liklon gd32f350", 0, 15);
-    flash_read_buf(tmp_table, 0, 15);
-    uart1_write(tmp_table, 15);
+    
+    calendar_info.year = 18;
+    calendar_info.month = 9;
+    calendar_info.day = 5;
+    calendar_info.week = 3;
+    calendar_info.hour = 15;
+    calendar_info.min = 26;
+    calendar_info.second = 22;
+    calendar_init(calendar_info);
+    uart1_write((uint8_t *)"hello\n\r", 7);
     while(1)
     {
-
+        calendar_get_date(&calendar_info);
+        
+        if(calendar_info.second != second)
+        {
+            sprintf((char *)tmp, "%2d-%2d-%2d %2d:%2d:%2d %2d\n\r", calendar_info.year, calendar_info.month, calendar_info.day, calendar_info.hour, calendar_info.min, calendar_info.second, calendar_info.week);
+            uart1_write(tmp, strlen((char *)tmp));
+            second = calendar_info.second;
+        }
     }
 }
 

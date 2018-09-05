@@ -594,6 +594,51 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>user/calendar</GroupName>
+          <Files>
+            <File>
+              <FileName>calendar.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\calendar\calendar.c</FilePath>
+            </File>
+            <File>
+              <FileName>calendar.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\calendar\calendar.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user/kv</GroupName>
+          <Files>
+            <File>
+              <FileName>b_kv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\kv\b_kv\b_kv\src\b_kv.c</FilePath>
+            </File>
+            <File>
+              <FileName>b_kv_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\kv\b_kv\b_kv\port\b_kv_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>b_kv_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\kv\b_kv\b_kv\port\b_kv_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>b_kv_port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\kv\b_kv\b_kv\port\b_kv_port.h</FilePath>
+            </File>
+            <File>
+              <FileName>b_kv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\kv\b_kv\b_kv\inc\b_kv.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>protocol/b_tp</GroupName>
           <Files>
             <File>

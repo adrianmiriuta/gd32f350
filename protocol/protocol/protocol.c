@@ -47,7 +47,7 @@ static void _protocol_dispatch(protocol_info_t protocol_info)
 
 
 
-void b_tp_callback_f(b_TPU8 *pbuf, b_TPU32 len)
+static void b_tp_callback_f(b_TPU8 *pbuf, b_TPU32 len)
 {
     uint32_t off = STRUCT_OFF(protocol_info_t, param);
     PROTO_PARAM_PTR_CHECK(pbuf);

@@ -1,3 +1,6 @@
 [submodule "protocol/b_tp_stream"]
 	path = protocol/b_tp_stream
 	url = git@github.com:notrynohigh/b_tp_stream.git
+[submodule "User/kv/b_kv"]
+	path = User/kv/b_kv
+	url = git@github.com:notrynohigh/b_kv.git
