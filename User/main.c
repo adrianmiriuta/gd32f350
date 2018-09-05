@@ -5,6 +5,7 @@
 #include "./spiflash/flash_dev.h"
 #include "./calendar/calendar.h"
 #include "./protocol/protocol_handle.h"
+#include "./timer/timer.h"
 int main()
 {
     nvic_priority_group_set(NVIC_PRIGROUP_PRE0_SUB4);
@@ -16,6 +17,7 @@ int main()
     uart_init();
     spi0_init();
     pro_init();
+    timer1_init();
     while(1)
     {
         

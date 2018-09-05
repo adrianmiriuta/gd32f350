@@ -639,6 +639,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>user/timer</GroupName>
+          <Files>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\timer\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\timer\timer.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>protocol/b_tp</GroupName>
           <Files>
             <File>

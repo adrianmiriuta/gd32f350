@@ -18,6 +18,8 @@ void platform_clock_enable()
     rcu_rtc_clock_config(RCU_RTCSRC_IRC40K);
     rcu_periph_clock_enable(RCU_RTC);
     rtc_register_sync_wait();
+    
+    rcu_periph_clock_enable(RCU_TIMER1);
 }
 
 
