@@ -52,19 +52,26 @@ typedef struct
 
 typedef void (*pcmd_handler_t)(protocol_info_t);
 
-
+#define PROTO_PARAM_PTR_CHECK(ptr)    do{if(ptr == NULL){ return; }}while(0)
 #define STRUCT_OFF(type, n)     ((uint32_t)(&(((type *)0)->n)))
 
 
 #define PROTO_REC_BUF_LEN     30            /**<  cmd + param ; this buffer save command and parameters that have been parsed */
 #define PROTO_SEND_BUF_LEN    128           /**<  this buffer is used during packing data */
 
+#ifndef RETVAL_TYPE
+
+#define RETVAL_TYPE          int
+#define RETVAL_SUCCESS       0
+#define RETVAL_EXE_ERR       -1
+#define RETVAL_PARAM_ERROR   -2
+
+#endif
 
 
-
-
-
-
+int protocol_send(protocol_struct_t protocol_struct, uint8_t *param, uint32_t param_len);
+int protocol_regist_command(uint8_t cmd, pcmd_handler_t phandler);
+int protocol_unregist_command(uint8_t cmd);
 
 #endif
 

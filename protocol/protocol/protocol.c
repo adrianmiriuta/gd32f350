@@ -1,6 +1,6 @@
 #include "protocol.h"
 #include "./b_tp_stream/b_tp/inc/b_tp.h"
-
+#include "string.h"
 
 static protocol_control_t sg_protocol_control;        /**< global variable for protocol module  */
 static uint8_t sg_cnumber = 0; 
@@ -32,10 +32,9 @@ static void _protocol_dispatch(protocol_info_t protocol_info)
     {
         .status = CMD_STATUS_SUCCESS,
     };    
-    heart_beat_clear();
     if(protocol_info.cmd < CMD_MAX_NUMBER)
     {
-        if(handler_table[protocol_info.cmd] != NULL)
+        if(handler_table[protocol_info.cmd] != b_TP_NULL)
         {
             handler_table[protocol_info.cmd](protocol_info);
             return;
@@ -43,7 +42,7 @@ static void _protocol_dispatch(protocol_info_t protocol_info)
     }
     protocol_struct.cmd = protocol_info.cmd;
     protocol_struct.status = CMD_STATUS_UNKNOWN;
-    protocol_send(protocol_struct, NULL, 0);    
+    protocol_send(protocol_struct, b_TP_NULL, 0);    
 }
 
 
@@ -55,14 +54,7 @@ void b_tp_callback_f(b_TPU8 *pbuf, b_TPU32 len)
     if(len > (PROTO_REC_BUF_LEN + off))
     {
         return;
-    }
-    uint8_t i = 0;
-    for(i = 0;i < len;i++)
-    {
-        b_log("%x ", pbuf[i]);
-    }
-    b_log("\n\r");
-       
+    }   
     sg_protocol_control.protocol_info.cmd = pbuf[0];
     sg_protocol_control.protocol_info.status = pbuf[1];
     if((len - off) > 0)
@@ -107,13 +99,6 @@ int protocol_send(protocol_struct_t protocol_struct, uint8_t *param, uint32_t pa
     p->cmd = protocol_struct.cmd;
     p->status = protocol_struct.status;
     memcpy(p->param, param, param_len);
-
-    uint8_t i = 0;
-    for(i = 0;i < param_len + sizeof(protocol_struct_t) - 1;i++)
-    {
-        b_log("%x ", ((uint8_t *)p)[i]);
-    }
-    b_log("\n\r");
     
     err_code = b_tp_send_data((uint8_t *)p, param_len + sizeof(protocol_struct_t) - 1);
     if(err_code != B_TP_SUCCESS)

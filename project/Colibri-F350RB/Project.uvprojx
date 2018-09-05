@@ -554,6 +554,46 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>user/delay</GroupName>
+          <Files>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\delay\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\delay\delay.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>user/spiflash</GroupName>
+          <Files>
+            <File>
+              <FileName>flash_dev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\spiflash\flash_dev.c</FilePath>
+            </File>
+            <File>
+              <FileName>flash_dev.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\spiflash\flash_dev.h</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\spiflash\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\User\spiflash\spi.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>protocol/b_tp</GroupName>
           <Files>
             <File>
@@ -605,6 +645,16 @@
               <FileName>protocol.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\protocol\protocol\protocol.h</FilePath>
+            </File>
+            <File>
+              <FileName>protocol_handle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\protocol\protocol\protocol_handle.c</FilePath>
+            </File>
+            <File>
+              <FileName>protocol_handle.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\protocol\protocol\protocol_handle.h</FilePath>
             </File>
           </Files>
         </Group>
