@@ -20,7 +20,7 @@ int main()
     timer1_init();
     while(1)
     {
-        
+        pro_main();
     }
 }
 

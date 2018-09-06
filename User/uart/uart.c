@@ -6,7 +6,7 @@
 #define NULL     ((void *)0)
 #endif
 
-volatile uint32_t v32_uartx = USART1;
+volatile uint32_t v32_uartx = USART0;
 
 void uart_init()
 {

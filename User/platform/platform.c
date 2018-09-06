@@ -6,6 +6,7 @@
 void platform_clock_enable()
 {
     rcu_periph_clock_enable(RCU_GPIOA);
+    rcu_periph_clock_enable(RCU_GPIOB);
     rcu_periph_clock_enable(RCU_USART0);
     rcu_periph_clock_enable(RCU_USART1);
     rcu_periph_clock_enable(RCU_SPI0);
@@ -69,6 +70,12 @@ void platform_gpio_init()
     gpio_mode_set(F_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, F_CS_PIN);
     gpio_output_options_set(F_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, F_CS_PIN);
     gpio_bit_set(F_PORT, F_CS_PIN);
+    /**
+     *  LED PB8
+     */
+    gpio_mode_set(LED_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, LED1_PIN);
+    gpio_output_options_set(LED_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, LED1_PIN);
+    gpio_bit_reset(LED_PORT, LED1_PIN);
 }
 
 

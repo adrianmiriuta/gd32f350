@@ -15,8 +15,10 @@
 #define  F_CS_PIN    GPIO_PIN_4
 #define  F_MO_PIN    GPIO_PIN_7
 #define  F_MI_PIN    GPIO_PIN_6
-
 #endif
+
+#define  LED_PORT      GPIOB
+#define  LED1_PIN      GPIO_PIN_8
 
 
 void platform_clock_enable(void);

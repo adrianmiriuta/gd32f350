@@ -8,10 +8,16 @@
 #define CMD_GET_TIME            0X05
 #define CMD_GET_TOTAL_STEP      0X06
 #define CMD_GET_BREAKDOWN       0X14
-
+#define CMD_REBOOT              0X50
 #define CMD_GET_USER_ID         0X57
 
-#define CMD_MAX_NUMBER          0X58
+#define CMD_TOOL_SCAN           0XA0
+#define CMD_TOOL_CONNECT        0XA1
+#define CMD_TOOL_CONN_STA       0XA2
+
+
+
+#define CMD_MAX_NUMBER          0XAA
 
 
 #define CMD_STATUS_SUCCESS          0X0
@@ -41,6 +47,43 @@ typedef struct
     uint8_t status;
     uint8_t param[1];
 }protocol_struct_t;
+
+
+/** CMD_TOOL_SCAN */
+
+#define DEVICE_NAME_MAX_LEN           16
+
+typedef struct
+{
+    uint8_t addr[6];
+    int8_t  rssi;
+    uint8_t name[DEVICE_NAME_MAX_LEN];
+}pro_scan_response_t;
+
+typedef struct
+{
+    uint8_t type;           //  0: stop  1: start
+}pro_scan_require_t;
+
+/** CMD_TOOL_CONNECT */
+
+typedef struct
+{
+    uint8_t addr[6];
+}pro_connect_info_t;
+
+
+/** CMD_TOOL_CONN_STA */
+
+typedef struct
+{
+    uint8_t status;
+}pro_conn_sta_t;
+
+
+
+
+
 
 #pragma pack()
 

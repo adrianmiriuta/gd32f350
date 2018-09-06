@@ -1,7 +1,6 @@
 #include "timer.h"
-#include "./uart/uart.h"
-
-
+#include "./led/led.h"
+#include "./protocol/protocol_handle.h"
 void timer1_init()
 {
     timer_parameter_struct timer_parameter = 
@@ -22,8 +21,9 @@ void timer1_init()
 
 
 void TIMER1_IRQHandler()
-{
-    uart1_write_ch('a');
+{ 
+    led_1s_toggle();
+    pro_send_hb();
     timer_interrupt_flag_clear(TIMER1, TIMER_INT_FLAG_UP);
 }
 
