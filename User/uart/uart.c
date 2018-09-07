@@ -6,7 +6,7 @@
 #define NULL     ((void *)0)
 #endif
 
-volatile uint32_t v32_uartx = USART0;
+volatile uint32_t v32_uartx = USART1;
 
 void uart_init()
 {
@@ -84,7 +84,14 @@ void USART0_IRQHandler()
 {
     uint8_t tmp = 0;
     tmp = usart_data_receive(USART0);
-    b_tp_receive_data(&tmp, 1);
+    if(v32_uartx == USART0)
+    {
+        b_tp_receive_data(&tmp, 1);
+    }
+    else
+    {
+        uart1_write_ch(tmp);
+    }
 }
 
 
@@ -92,6 +99,10 @@ void USART1_IRQHandler()
 {
     uint8_t tmp = 0;
     tmp = usart_data_receive(USART1);
+
     b_tp_receive_data(&tmp, 1);
+    uart0_write_ch(tmp);
+
+    
 }
 

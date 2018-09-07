@@ -14,7 +14,11 @@
 #define CMD_TOOL_SCAN           0XA0
 #define CMD_TOOL_CONNECT        0XA1
 #define CMD_TOOL_CONN_STA       0XA2
-
+#define CMD_BRIDGE_SET_TIME     0XA3
+#define CMD_BRIDGE_GET_TIME     0XA4
+#define CMD_BRIDGE_START        0XA5
+#define CMD_BRIDGE_END          0XA6
+#define CMD_BRIDGE_SYN          0XA7
 
 
 #define CMD_MAX_NUMBER          0XAA
@@ -49,6 +53,13 @@ typedef struct
 }protocol_struct_t;
 
 
+/** CMD_SET_USER_ID */
+typedef struct
+{
+    uint32_t user_id; 
+}pro_user_id_t;
+
+
 /** CMD_TOOL_SCAN */
 
 #define DEVICE_NAME_MAX_LEN           16
@@ -81,8 +92,48 @@ typedef struct
 }pro_conn_sta_t;
 
 
+/** CMD_GET_TOTAL_STEP */
+typedef struct
+{
+    uint8_t  month;
+    uint8_t  day;
+}pro_total_step_require_t;
 
 
+typedef struct
+{
+    uint8_t  month;
+    uint8_t  day;
+    uint32_t total_step;
+}pro_total_step_response_t;
+
+
+/** CMD_SET/GET_TIME */
+typedef struct
+{
+    uint8_t  year;
+    uint8_t  month;
+    uint8_t  day;
+    uint8_t  hour;
+    uint8_t  minute;
+    uint8_t  second;
+}pro_time_t;
+
+
+typedef struct
+{
+    uint8_t  month;
+    uint8_t  day;
+}pro_syn_require_t;
+
+/** CMD_SYN_WALK_DATA */
+typedef struct
+{
+    uint8_t  month;
+    uint8_t  day;
+    uint32_t id;
+    uint32_t step;
+}pro_walk_info_t;
 
 
 #pragma pack()

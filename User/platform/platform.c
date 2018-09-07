@@ -71,11 +71,17 @@ void platform_gpio_init()
     gpio_output_options_set(F_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, F_CS_PIN);
     gpio_bit_set(F_PORT, F_CS_PIN);
     /**
-     *  LED PB8
+     *  LED PB8 PB9 PB10
      */
     gpio_mode_set(LED_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, LED1_PIN);
     gpio_output_options_set(LED_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, LED1_PIN);
     gpio_bit_reset(LED_PORT, LED1_PIN);
+    gpio_mode_set(LED_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, LED2_PIN);
+    gpio_output_options_set(LED_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, LED2_PIN);
+    gpio_bit_reset(LED_PORT, LED2_PIN);
+    gpio_mode_set(LED_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_PULLUP, LED3_PIN);
+    gpio_output_options_set(LED_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, LED3_PIN);
+    gpio_bit_reset(LED_PORT, LED3_PIN);    
 }
 
 

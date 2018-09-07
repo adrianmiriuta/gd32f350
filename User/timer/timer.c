@@ -22,8 +22,17 @@ void timer1_init()
 
 void TIMER1_IRQHandler()
 { 
+    static uint32_t s_count = 0;
     led_1s_toggle();
     pro_send_hb();
+    s_count++;
+    if(s_count > 300)
+    {
+        if(pro_clear_mac_rcd() == 0)
+        {
+            s_count = 0;
+        }
+    }
     timer_interrupt_flag_clear(TIMER1, TIMER_INT_FLAG_UP);
 }
 

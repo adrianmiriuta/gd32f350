@@ -20,9 +20,29 @@ void led_1s_toggle()
 }
 
 
+void led2_control(uint8_t n)
+{
+    if(n)
+    {
+        LED2_ON();
+    }
+    else
+    {
+        LED2_OFF();
+    }
+}
 
-
-
+void led3_control(uint8_t n)
+{
+    if(n)
+    {
+        LED3_ON();
+    }
+    else
+    {
+        LED3_OFF();
+    }
+}
 
 
 

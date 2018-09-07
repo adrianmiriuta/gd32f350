@@ -163,24 +163,7 @@
           <Name>-U91999999 -O78 -S5 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8004 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO23 -FD20000000 -FC800 -FN1 -FF0GD32F1x0_64.FLM -FS08000000 -FL010000 -FP0($$Device:GD32F150R8$Flash\GD32F1x0_64.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>294</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134219438</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\..\protocol\b_tp_stream\b_tp\src\b_tp.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\trochili\../../protocol/b_tp_stream/b_tp/src/b_tp.c\294</Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
       <WatchWindow1>
         <Ww>
           <count>0</count>
@@ -206,6 +189,31 @@
           <count>4</count>
           <WinNumber>1</WinNumber>
           <ItemText>sg_protocol_control</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>s_status</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>mac_record</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>kv_day_table</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>pro_value_struct</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>b_kv_code_table</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -661,7 +669,7 @@
 
   <Group>
     <GroupName>user/uart</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -693,7 +701,7 @@
 
   <Group>
     <GroupName>user/platform</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1089,7 +1097,7 @@
 
   <Group>
     <GroupName>protocol/protocol</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

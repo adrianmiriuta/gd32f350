@@ -1,6 +1,8 @@
 #include "protocol.h"
 #include "./b_tp_stream/b_tp/inc/b_tp.h"
 #include "string.h"
+#include "./uart/uart.h"
+
 
 static protocol_control_t sg_protocol_control;        /**< global variable for protocol module  */
 static uint8_t sg_cnumber = 0; 
@@ -44,7 +46,6 @@ static void _protocol_dispatch(protocol_info_t protocol_info)
     protocol_struct.status = CMD_STATUS_UNKNOWN;
     protocol_send(protocol_struct, b_TP_NULL, 0);    
 }
-
 
 
 static void b_tp_callback_f(b_TPU8 *pbuf, b_TPU32 len)
