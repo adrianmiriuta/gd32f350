@@ -21,6 +21,7 @@ void platform_clock_enable()
     rtc_register_sync_wait();
     
     rcu_periph_clock_enable(RCU_TIMER1);
+    rcu_periph_clock_enable(RCU_DMA);
 }
 
 
