@@ -22,6 +22,12 @@
 #define  LED2_PIN      GPIO_PIN_9
 #define  LED3_PIN      GPIO_PIN_10
 
+
+#define  MPU_PORT      GPIOA
+#define  MPU_CLK       GPIO_PIN_9
+#define  MPU_SDA       GPIO_PIN_10
+
+
 void platform_clock_enable(void);
 void platform_gpio_init(void);
 

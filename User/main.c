@@ -6,6 +6,7 @@
 #include "./calendar/calendar.h"
 #include "./protocol/protocol_handle.h"
 #include "./timer/timer.h"
+#include "./mpu/mpu_dev.h"
 int main()
 {
     nvic_priority_group_set(NVIC_PRIGROUP_PRE0_SUB4);
@@ -16,11 +17,13 @@ int main()
     /** peripherals init   */
     uart_init();
     spi0_init();
-    pro_init();
+//    pro_init();
     timer1_init();
+    mpu_init();
     while(1)
     {
-        pro_main();
+//        pro_main();
+        
     }
 }
 
